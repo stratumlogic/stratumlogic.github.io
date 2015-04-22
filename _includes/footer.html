@@ -1,0 +1,35 @@
+
+      <hr>
+
+      <footer>
+        <p>&copy; Stratum Logic 2015</p>
+      </footer>
+    </div> <!-- /container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script>
+      // http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js
+      // source and license: http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js
+      // See the Getting Started docs for more information:
+      // http://getbootstrap.com/getting-started/#support-ie10-width
+
+      (function () {
+        'use strict';
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+          var msViewportStyle = document.createElement('style')
+          msViewportStyle.appendChild(
+            document.createTextNode(
+              '@-ms-viewport{width:auto!important}'
+            )
+          )
+          document.querySelector('head').appendChild(msViewportStyle)
+        }
+      })();
+    </script>
+
+    {{ include.page_script }}
+
+  </body>
+</html>
