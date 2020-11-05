@@ -11,99 +11,10 @@
 </style>
 
 <h1>Contact Us</h1>
-<p>Please use this form to contact us.  We will have someone contact you back shortly.  Feel free to include any project details in the comments.</p>
-<div name="CustomMessage" id="CustomMessage"></div>
+<p>Please use this form to contact us. We will have someone contact you back shortly. Feel free to include any project details in the comments.</p>
 
 <!-- google form -->
-<div id="form-container">
-<form target="GoogleResponseIframe" onsubmit="submitToGoogle(this)" method="POST" id="ss-form">
-  <ol role="list" class="ss-question-list" style="padding-left: 0">
-
-
-    <div class="form-group" role="listitem">
-      <label for="entry_2119466593">Name <span class="required-star">*</span></label>
-      <input type="text" autocomplete="name" name="entry.2119466593" placeholder="Full Name" value="" class="i-short form-control" id="entry_2119466593" dir="auto" aria-label="Name  " aria-required="true" required title="">
-    </div>
-
-    <div class="form-group" role="listitem">
-        <label for="entry_1894372997">Email <span class="required-star">*</span></label>
-        <input type="email" autocomplete="email" name="entry.1894372997" placeholder="e.g. mike@example.net" value="" class="i-short form-control" id="entry_1894372997" dir="auto" aria-label="Email  Must be a valid email address" aria-required="true" required title="Must be a valid email address">
-    </div>
-
-    <div class="form-group" role="listitem">
-        <label for="entry_1896660511">Phone</label>
-        <input type="tel" autocomplete="tel" name="entry.1896660511" placeholder="Please include area code" value="" class="i-short form-control" id="entry_1896660511" dir="auto" aria-label="Phone  ex, 555-555-1212" pattern=".*\d\D*\d\D*\d\D*\d\D*\d\D*\d\D*\d\D*\d\D*\d\D*\d.*" title="ex, 555-555-1212">
-    </div>
-
-    <div class="form-group" role="listitem">
-        <label for="entry_551946479">Company</label>
-        <input type="text" autocomplete="organization" name="entry.551946479" value="" class="i-short form-control" id="entry_551946479" dir="auto" aria-label="Company  " title="">
-    </div>
-
-    <div class="form-group" role="listitem">
-      <label for="entry_464079541">Message <span class="required-star">*</span></label>
-      <textarea name="entry.464079541" rows="8" cols="0" class="form-control" id="entry_464079541" dir="auto" aria-label="Message  " required></textarea>
-    </div>
-
-    <div class="form-group" role="listitem">
-        <label for="entry_1488777751">Complete this lyric: Twinkle, Twinkle little ____? <span class="required-star">*</span></label>
-        <input type="text" name="entry.1488777751" value="" class="i-short form-control" id="entry_1488777751" dir="auto" aria-label="Complete this lyric: Twinkle, Twinkle little ____?  " title="" required autocomplete="off">
-    </div>
-
-    <input type="hidden" name="draftResponse" value="[,,&quot;-3269164069543730764&quot;]">
-    <input type="hidden" name="pageHistory" value="0">
-    <input type="hidden" name="fbzx" value="-3269164069543730764">
-
-    <div class="form-navigate">
-        <input type="submit" name="ss-submit" value="Submit" id="ss-submit" >
-    </div>
-  </ol>
-</form>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeno_c9f2fL59BsCID27cvh4c-s4VyrVz40kdKOAkcpsqbkEw/viewform?embedded=true" width="640" height="1110" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </div>
-
-{% capture page_script %}
-<!-- https://github.com/ryanseddon/H5F-->
-<script type="text/javascript" src="h5f.min.js"></script>
-
-<!-- configuration -->
-<script type="text/javascript">
-  window.onload = function() {
-  	H5F.setup(document.getElementById("ss-form"));
-  };
-
-  var isifstar = document.getElementById("entry_1488777751");
-
-  var checkisifstar = function() {
-    if (isifstar.value.toLowerCase() !== "star") {
-        isifstar.setCustomValidity('Please enter correct value.');
-    } else {
-        isifstar.setCustomValidity('');
-    }
-  };
-
-  isifstar.addEventListener('change', checkisifstar, false);
-
-  function submitToGoogle(form) {
-    if (isifstar.value.toLowerCase() !== "star") {
-      return false;
-    } else {
-        form.action="https://docs.google.com/a/stratumlogic.com/forms/d/1EhCAr2S0-n6G4So4DmS29THfe3-0QGd5INnqF1I7x_s/formResponse";
-    }
-
-    document.getElementById("CustomMessage").style.display = "";
-    document.getElementById("CustomMessage").innerHTML = "Thank you! We will have someone contact you soon";
-
-    //form.submit();
-
-    //document.getElementById("form-container").style.display = "none";
-    $("#form-container").remove();
-
-    //$("#GoogleResponseIframe").remove();
-
-    return true;
-
-  }
-</script>
-{% endcapture %}
 
 {% include footer.html page_script=page_script %}
